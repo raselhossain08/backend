@@ -5,16 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Live Stream</title>
+    <style>
+      video{
+        margin: auto;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <h2>Live Stream</h2>
-    <video id="video" width="800" controls></video>
+    <video id="video"  controls></video>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <!-- Or if you want a more recent alpha version -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@alpha"></script> -->
     <script>
       var video = document.getElementById("video");
-      var videoSrc = "http://localhost:8080/hls/test.m3u8";
+      var videoSrc = "http://3.81.101.40:8080/hls/test.m3u8";
       if (Hls.isSupported()) {
         var hls = new Hls();
         hls.loadSource(videoSrc);
